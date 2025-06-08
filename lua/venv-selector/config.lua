@@ -56,6 +56,9 @@ function M.get_default_searches()
                 poetry = {
                     command = "$FD '/bin/python$' ~/.cache/pypoetry/virtualenvs --no-ignore-vcs --full-path",
                 },
+                uv = {
+                    command = "$FD '/bin/python$' $CWD/.venv $WORKSPACE_PATH/.venv $FILE_DIR/.venv --no-ignore-vcs --full-path --color never",
+                },
                 pyenv = {
                     command = "$FD '/bin/python$' ~/.pyenv/versions --no-ignore-vcs --full-path --color never -E pkgs/ -E envs/ -L",
                 },
@@ -102,6 +105,9 @@ function M.get_default_searches()
                 },
                 poetry = {
                     command = "$FD '/bin/python$' ~/Library/Caches/pypoetry/virtualenvs --no-ignore-vcs --full-path",
+                },
+                uv = {
+                    command = "$FD '/bin/python$' $CWD/.venv $WORKSPACE_PATH/.venv $FILE_DIR/.venv --no-ignore-vcs --full-path --color never",
                 },
                 pyenv = {
                     command = "$FD '/bin/python$' ~/.pyenv/versions --no-ignore-vcs --full-path --color never -E pkgs/ -E envs/ -L",
