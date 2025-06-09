@@ -7,12 +7,12 @@
 </p>
 
 <p align="center">
-    <img src="venv-selector.png" />
+    <img src="nvim-python-env.png" />
 </p>
 
 # 2024-05-14 - New version of VenvSelect
 
-There is a rewrite of the plugin in the [regexp branch](https://github.com/linux-cultist/venv-selector.nvim/tree/regexp).
+There is a rewrite of the plugin in the [regexp branch](https://github.com/bilbofroggins/nvim-python-env/tree/regexp).
 
 Use that version if you are a new user `VenvSelect`.
 
@@ -54,7 +54,7 @@ Easiest way if you use [Lazy.nvim](https://github.com/folke/lazy.nvim) is to use
 
 ```lua
 return {
-  'linux-cultist/venv-selector.nvim',
+  'bilbofroggins/nvim-python-env',
   dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
   opts = {
     -- Your options go here
@@ -75,10 +75,10 @@ But if you want, you can also manually call the setup function like this:
 
 ```lua
 return {
-  'linux-cultist/venv-selector.nvim',
+  'bilbofroggins/nvim-python-env',
   dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
   config = function()
-    require('venv-selector').setup {
+    require('nvim-python-env').setup {
       -- Your options go here
       -- name = "venv",
       -- auto_refresh = false
@@ -134,14 +134,14 @@ Neovim when you have a file opened and your LSP has started. `VenvSelect` looks 
 | name                                 | venv                                                                                                     | The name of the venvs to look for. Can be set to a lua table to search for multiple names (name = {"venv", ".venv"})                                                                                                                                                                                                                                                                                      |
 | fd_binary_name                       | fd                                                                                                       | `VenvSelect` also tries to find other names for the same program, like `fdfind` and `fd-find` and will use those if found. But you can set something specific here if you need to.                                                                                                                                                                                                                        |
 | notify_user_on_activate              | true                                                                                                     | `VenvSelect` will notify you with a message when a venv is selected in the user interface.                                                                                                                                                                                                                                                                                                                |
-| poetry_path                          | [system.lua](https://github.com/linux-cultist/venv-selector.nvim/blob/main/lua/venv-selector/system.lua) | The default path on your system where the plugin looks for Poetry venvs.                                                                                                                                                                                                                                                                                                                                  |
-| pdm_path                             | [system.lua](https://github.com/linux-cultist/venv-selector.nvim/blob/main/lua/venv-selector/system.lua) | The default path on your system where the plugin looks for PDM venvs.                                                                                                                                                                                                                                                                                                                                     |
-| pipenv_path                          | [system.lua](https://github.com/linux-cultist/venv-selector.nvim/blob/main/lua/venv-selector/system.lua) | The default path on your system where the plugin looks for Pipenv venvs.                                                                                                                                                                                                                                                                                                                                  |
-| pyenv_path                           | [system.lua](https://github.com/linux-cultist/venv-selector.nvim/blob/main/lua/venv-selector/system.lua) | The default path on your system where the plugin looks for Pyenv venvs.                                                                                                                                                                                                                                                                                                                                   |
-| hatch_path                           | [system.lua](https://github.com/linux-cultist/venv-selector.nvim/blob/main/lua/venv-selector/system.lua) | The default path on your system where the plugin looks for Hatch venvs.                                                                                                                                                                                                                                                                                                                                   |
-| venvwrapper_path                     | [system.lua](https://github.com/linux-cultist/venv-selector.nvim/blob/main/lua/venv-selector/system.lua) | The default path on your system where the plugin looks for VenvWrapper venvs.                                                                                                                                                                                                                                                                                                                             |
-| anaconda_base_path                   | [system.lua](https://github.com/linux-cultist/venv-selector.nvim/blob/main/lua/venv-selector/system.lua) | The default path on your system where the plugin looks for Anaconda venvs.                                                                                                                                                                                                                                                                                                                                |
-| anaconda_envs_path                   | [system.lua](https://github.com/linux-cultist/venv-selector.nvim/blob/main/lua/venv-selector/system.lua) | The default path on your system where the plugin looks for Anaconda venvs.                                                                                                                                                                                                                                                                                                                                |
+| poetry_path                          | [system.lua](https://github.com/bilbofroggins/nvim-python-env/blob/main/lua/nvim-python-env/system.lua) | The default path on your system where the plugin looks for Poetry venvs.                                                                                                                                                                                                                                                                                                                                  |
+| pdm_path                             | [system.lua](https://github.com/bilbofroggins/nvim-python-env/blob/main/lua/nvim-python-env/system.lua) | The default path on your system where the plugin looks for PDM venvs.                                                                                                                                                                                                                                                                                                                                     |
+| pipenv_path                          | [system.lua](https://github.com/bilbofroggins/nvim-python-env/blob/main/lua/nvim-python-env/system.lua) | The default path on your system where the plugin looks for Pipenv venvs.                                                                                                                                                                                                                                                                                                                                  |
+| pyenv_path                           | [system.lua](https://github.com/bilbofroggins/nvim-python-env/blob/main/lua/nvim-python-env/system.lua) | The default path on your system where the plugin looks for Pyenv venvs.                                                                                                                                                                                                                                                                                                                                   |
+| hatch_path                           | [system.lua](https://github.com/bilbofroggins/nvim-python-env/blob/main/lua/nvim-python-env/system.lua) | The default path on your system where the plugin looks for Hatch venvs.                                                                                                                                                                                                                                                                                                                                   |
+| venvwrapper_path                     | [system.lua](https://github.com/bilbofroggins/nvim-python-env/blob/main/lua/nvim-python-env/system.lua) | The default path on your system where the plugin looks for VenvWrapper venvs.                                                                                                                                                                                                                                                                                                                             |
+| anaconda_base_path                   | [system.lua](https://github.com/bilbofroggins/nvim-python-env/blob/main/lua/nvim-python-env/system.lua) | The default path on your system where the plugin looks for Anaconda venvs.                                                                                                                                                                                                                                                                                                                                |
+| anaconda_envs_path                   | [system.lua](https://github.com/bilbofroggins/nvim-python-env/blob/main/lua/nvim-python-env/system.lua) | The default path on your system where the plugin looks for Anaconda venvs.                                                                                                                                                                                                                                                                                                                                |
 | anaconda { python_executable = nil } | 'python' or 'python3'                                                                                    | The name of the anaconda python executable                                                                                                                                                                                                                                                                                                                                                                |
 | anaconda { python_parent_dir = nil } | 'bin' or 'Scripts'                                                                                       | The name of the anaconda python parent directory                                                                                                                                                                                                                                                                                                                                                          |
 
@@ -173,7 +173,7 @@ end
 And provide it to a setup function:
 
 ```lua
-require('venv-selector').setup {
+require('nvim-python-env').setup {
   --- other configuration
   changed_venv_hooks = { your_hook_name },
 }
@@ -182,7 +182,7 @@ require('venv-selector').setup {
 The plugin-provided hooks are exposed for convenience in case you want to use them alongside your custom one:
 
 ```lua
-local venv_selector = require 'venv-selector'
+local venv_selector = require 'nvim-python-env'
 
 venv_selector.setup {
   --- other configuration
@@ -192,19 +192,19 @@ venv_selector.setup {
 
 Currently provided hooks are:
 
-- `require("venv-selector").hooks.basedpyright`
-- `require("venv-selector").hooks.pyright`
-- `require("venv-selector").hooks.pylance`
-- `require("venv-selector").hooks.pylsp`
+- `require("nvim-python-env").hooks.basedpyright`
+- `require("nvim-python-env").hooks.pyright`
+- `require("nvim-python-env").hooks.pylance`
+- `require("nvim-python-env").hooks.pylsp`
 
 ### Helpful functions
 
 The selected virtual environment and path to the python executable is available from these two functions:
 
 ```lua
-require('venv-selector').get_active_path() -- Gives path to the python executable inside the activated virtual environment
-require('venv-selector').get_active_venv() -- Gives path to the activated virtual environment folder
-require('venv-selector').retrieve_from_cache() -- To activate the last virtual environment set in the current working directory
+require('nvim-python-env').get_active_path() -- Gives path to the python executable inside the activated virtual environment
+require('nvim-python-env').get_active_venv() -- Gives path to the activated virtual environment folder
+require('nvim-python-env').retrieve_from_cache() -- To activate the last virtual environment set in the current working directory
 ```
 
 This can be used to print out the virtual environment in a status bar, or make the plugin work with other plugins that
@@ -224,7 +224,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     local venv = vim.fn.findfile('pyproject.toml', vim.fn.getcwd() .. ';')
     if venv ~= '' then
-      require('venv-selector').retrieve_from_cache()
+      require('nvim-python-env').retrieve_from_cache()
     end
   end,
   once = true,
@@ -260,7 +260,7 @@ You can see that the path shows that the virtual environments are located under 
 Copy the virtualenv path and set it as a parameter to the `VenvSelector` setup function:
 
 ```lua
-require('venv-selector').setup {
+require('nvim-python-env').setup {
   poetry_path = '/home/cado/.cache/pypoetry/virtualenvs',
 }
 ```
@@ -279,7 +279,7 @@ You can see that the path shows that the virtual environments are located under 
 Copy the virtualenv path and set it as a parameter to the `VenvSelector` setup function:
 
 ```lua
-require('venv-selector').setup {
+require('nvim-python-env').setup {
   pipenv_path = '/home/cado/.local/share/virtualenvs',
 }
 ```
@@ -295,7 +295,7 @@ The virtualenvs are stored under the `versions` folder inside that directory. In
 Copy the virtualenv path and set it as a parameter to the `VenvSelector` setup function:
 
 ```lua
-require('venv-selector').setup {
+require('nvim-python-env').setup {
   pyenv_path = '/home/cado/.pyenv/versions',
 }
 ```
@@ -316,7 +316,7 @@ base                  *  /opt/anaconda
 Configure `VenvSelect` like this in this example:
 
 ```lua
-require('venv-selector').setup {
+require('nvim-python-env').setup {
   anaconda_base_path = '/opt/anaconda',
   anaconda_envs_path = '/home/cado/.conda/envs',
 }
@@ -344,7 +344,7 @@ To add a clickable component to your heirline statusline.
 
 ```lua
 local actived_venv = function()
-  local venv_name = require('venv-selector').get_active_venv()
+  local venv_name = require('nvim-python-env').get_active_venv()
   if venv_name ~= nil then
     return string.gsub(venv_name, '.*/pypoetry/virtualenvs/', '(poetry) ')
   else

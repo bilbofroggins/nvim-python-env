@@ -4,7 +4,7 @@ local default_opts = {
   icon = '',
   color = { fg = '#CDD6F4' },
   on_click = function()
-    require('venv-selector').open()
+    require('nvim-python-env').open()
   end,
 }
 
@@ -14,7 +14,7 @@ function M:init(options)
 end
 
 function M:update_status()
-  local venv = require('venv-selector').get_active_venv()
+  local venv = require('nvim-python-env').get_active_venv()
   if venv then
     local venv_parts = vim.fn.split(venv, '/')
     local venv_name = venv_parts[#venv_parts]

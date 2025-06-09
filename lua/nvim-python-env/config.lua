@@ -1,5 +1,5 @@
-local system = require 'venv-selector.system'
-local hooks = require 'venv-selector.hooks'
+local system = require 'nvim-python-env.system'
+local hooks = require 'nvim-python-env.hooks'
 
 local M = {}
 
@@ -37,7 +37,7 @@ M.default_settings = {
 
 -- Gets the search path supplied by the user in the setup function, or use current open buffer directory.
 function M.get_buffer_dir()
-  local dbg = require('venv-selector.utils').dbg
+  local dbg = require('nvim-python-env.utils').dbg
   local path
   if M.settings.path == nil then
     path = require('telescope.utils').buffer_dir()

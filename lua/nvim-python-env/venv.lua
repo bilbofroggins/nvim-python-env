@@ -1,8 +1,8 @@
-local system = require 'venv-selector.system'
-local utils = require 'venv-selector.utils'
-local dbg = require('venv-selector.utils').dbg
-local mytelescope = require 'venv-selector.mytelescope'
-local config = require 'venv-selector.config'
+local system = require 'nvim-python-env.system'
+local utils = require 'nvim-python-env.utils'
+local dbg = require('nvim-python-env.utils').dbg
+local mytelescope = require 'nvim-python-env.mytelescope'
+local config = require 'nvim-python-env.config'
 
 local M = {}
 

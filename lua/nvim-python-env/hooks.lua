@@ -4,7 +4,7 @@ local M = {}
 --- @alias LspClientCallback fun(client: NvimLspClient): nil
 --- @type fun(name: string, callback: LspClientCallback): nil
 function M.execute_for_client(name, callback)
-  local dbg = require('venv-selector.utils').dbg
+  local dbg = require('nvim-python-env.utils').dbg
   -- get_active_clients deprecated in neovim v0.10
   local client = (vim.lsp.get_clients or vim.lsp.get_active_clients)({ name = name })[1]
 

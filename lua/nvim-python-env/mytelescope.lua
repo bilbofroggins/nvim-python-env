@@ -1,6 +1,6 @@
-local utils = require 'venv-selector.utils'
-local dbg = require('venv-selector.utils').dbg
-local config = require 'venv-selector.config'
+local utils = require 'nvim-python-env.utils'
+local dbg = require('nvim-python-env.utils').dbg
+local config = require 'nvim-python-env.config'
 
 local M = {}
 
@@ -142,7 +142,7 @@ function M.open()
     end,
   }
 
-  local venv = require 'venv-selector.venv'
+  local venv = require 'nvim-python-env.venv'
   local opts = {
     prompt_title = title,
     finder = finder,

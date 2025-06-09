@@ -1,6 +1,6 @@
 local M = {}
 
-local config = require 'venv-selector.config'
+local config = require 'nvim-python-env.config'
 local msg_prefix = 'VenvSelect: '
 
 function M.notify(msg)
